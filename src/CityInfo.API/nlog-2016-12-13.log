@@ -1,0 +1,10 @@
+2016-12-13 21:15:55.2740|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 DEBUG http://localhost:56100/  0
+2016-12-13 21:15:55.2740|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:56100/  
+2016-12-13 21:15:55.4800|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 241.3867ms 200 
+2016-12-13 21:15:55.7609|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 542.2704ms 404 text/plain
+2016-12-13 21:15:59.0879|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:56100/api/cities/4/pointsofinterest  
+2016-12-13 21:15:59.3343|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executing action method CityInfo.API.Controllers.PointsOfInterestController.GetPointsOfInterest (CityInfo.API) with arguments (4) - ModelState is Valid
+2016-12-13 21:15:59.3703|FATAL|CityInfo.API.Controllers.PointsOfInterestController|Exception while getting points of interest for city with id 4
+2016-12-13 21:15:59.4050|INFO|Microsoft.AspNetCore.Mvc.Internal.ObjectResultExecutor|Executing ObjectResult, writing value Microsoft.AspNetCore.Mvc.ControllerContext.
+2016-12-13 21:15:59.4311|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action CityInfo.API.Controllers.PointsOfInterestController.GetPointsOfInterest (CityInfo.API) in 245.2778ms
+2016-12-13 21:15:59.4398|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 352.6281ms 500 text/plain; charset=utf-8
