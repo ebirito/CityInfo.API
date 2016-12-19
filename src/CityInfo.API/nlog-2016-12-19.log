@@ -1,0 +1,90 @@
+2016-12-19 16:23:27.0957|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 DEBUG http://localhost:56100/  0
+2016-12-19 16:23:27.0957|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:56100/  
+2016-12-19 16:23:27.2406|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 167.7808ms 200 
+2016-12-19 16:23:27.5780|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 515.9282ms 404 text/plain
+2016-12-19 16:23:28.0012|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:56100/favicon.ico  
+2016-12-19 16:23:28.0092|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 11.5506ms 404 text/plain
+2016-12-19 16:23:33.8928|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:56100/api/testdatabase  
+2016-12-19 16:23:35.0894|INFO|Microsoft.EntityFrameworkCore.Storage.IRelationalCommandBuilderFactory|Executed DbCommand (69ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT OBJECT_ID(N'__EFMigrationsHistory');
+2016-12-19 16:23:35.1019|INFO|Microsoft.EntityFrameworkCore.Storage.IRelationalCommandBuilderFactory|Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT OBJECT_ID(N'__EFMigrationsHistory');
+2016-12-19 16:23:35.1305|INFO|Microsoft.EntityFrameworkCore.Storage.IRelationalCommandBuilderFactory|Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2016-12-19 16:23:35.1646|INFO|Microsoft.EntityFrameworkCore.Migrations.Internal.Migrator|Applying migration '20161219212246_CityInfoDBAddPointOfInterestDescription'.
+2016-12-19 16:23:35.2621|INFO|Microsoft.EntityFrameworkCore.Storage.IRelationalCommandBuilderFactory|Executed DbCommand (25ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+ALTER TABLE [PointOfInterest] ADD [Description] nvarchar(200);
+2016-12-19 16:23:35.2745|INFO|Microsoft.EntityFrameworkCore.Storage.IRelationalCommandBuilderFactory|Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+VALUES (N'20161219212246_CityInfoDBAddPointOfInterestDescription', N'1.1.0-rtm-22752');
+2016-12-19 16:23:35.3330|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executing action method CityInfo.API.Controllers.DummyController.TestDatabase (CityInfo.API) with arguments ((null)) - ModelState is Valid
+2016-12-19 16:23:35.3586|INFO|Microsoft.AspNetCore.Mvc.StatusCodeResult|Executing HttpStatusCodeResult, setting HTTP status code 200
+2016-12-19 16:23:35.3816|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action CityInfo.API.Controllers.DummyController.TestDatabase (CityInfo.API) in 1391.258ms
+2016-12-19 16:23:35.4017|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 1508.2055ms 200 
+2016-12-19 16:48:34.0249|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 DEBUG http://localhost:56100/  0
+2016-12-19 16:48:34.0249|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:56100/  
+2016-12-19 16:48:34.1773|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 182.8456ms 200 
+2016-12-19 16:48:34.4740|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 501.1531ms 404 text/plain
+2016-12-19 16:48:39.3741|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:56100/api/testdatabase  
+2016-12-19 16:48:40.7801|INFO|Microsoft.EntityFrameworkCore.Storage.IRelationalCommandBuilderFactory|Executed DbCommand (61ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT OBJECT_ID(N'__EFMigrationsHistory');
+2016-12-19 16:48:40.8007|INFO|Microsoft.EntityFrameworkCore.Storage.IRelationalCommandBuilderFactory|Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT OBJECT_ID(N'__EFMigrationsHistory');
+2016-12-19 16:48:40.8388|INFO|Microsoft.EntityFrameworkCore.Storage.IRelationalCommandBuilderFactory|Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2016-12-19 16:48:40.9130|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executing action method CityInfo.API.Controllers.DummyController.TestDatabase (CityInfo.API) with arguments ((null)) - ModelState is Valid
+2016-12-19 16:48:40.9415|INFO|Microsoft.AspNetCore.Mvc.StatusCodeResult|Executing HttpStatusCodeResult, setting HTTP status code 200
+2016-12-19 16:48:40.9706|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action CityInfo.API.Controllers.DummyController.TestDatabase (CityInfo.API) in 1494.2246ms
+2016-12-19 16:48:40.9932|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 1622.129ms 200 
+2016-12-19 17:12:04.8838|INFO|Microsoft.EntityFrameworkCore.Storage.IRelationalCommandBuilderFactory|Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Cities] AS [c])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END
+2016-12-19 17:12:05.2577|INFO|Microsoft.EntityFrameworkCore.Storage.IRelationalCommandBuilderFactory|Executed DbCommand (66ms) [Parameters=[@p0='?' (Size = 200), @p1='?' (Size = 50), @p2='?' (Size = 200), @p3='?' (Size = 50), @p4='?' (Size = 200), @p5='?' (Size = 50)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+DECLARE @toInsert0 TABLE ([Description] nvarchar(200), [Name] nvarchar(50), [_Position] [int]);
+INSERT INTO @toInsert0
+VALUES (@p0, @p1, 0),
+(@p2, @p3, 1),
+(@p4, @p5, 2);
+
+DECLARE @inserted0 TABLE ([Id] int, [_Position] [int]);
+MERGE [Cities] USING @toInsert0 AS i ON 1=0
+WHEN NOT MATCHED THEN
+INSERT ([Description], [Name])
+VALUES (i.[Description], i.[Name])
+OUTPUT INSERTED.[Id], i._Position
+INTO @inserted0;
+
+SELECT [t].[Id] FROM [Cities] t
+INNER JOIN @inserted0 i ON ([t].[Id] = [i].[Id])
+ORDER BY [i].[_Position];
+2016-12-19 17:12:05.3038|INFO|Microsoft.EntityFrameworkCore.Storage.IRelationalCommandBuilderFactory|Executed DbCommand (10ms) [Parameters=[@p6='?', @p7='?' (Size = 200), @p8='?' (Size = 50), @p9='?', @p10='?' (Size = 200), @p11='?' (Size = 50)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+DECLARE @toInsert0 TABLE ([CityId] int, [Description] nvarchar(200), [Name] nvarchar(50), [_Position] [int]);
+INSERT INTO @toInsert0
+VALUES (@p6, @p7, @p8, 0),
+(@p9, @p10, @p11, 1);
+
+DECLARE @inserted0 TABLE ([Id] int, [_Position] [int]);
+MERGE [PointOfInterest] USING @toInsert0 AS i ON 1=0
+WHEN NOT MATCHED THEN
+INSERT ([CityId], [Description], [Name])
+VALUES (i.[CityId], i.[Description], i.[Name])
+OUTPUT INSERTED.[Id], i._Position
+INTO @inserted0;
+
+SELECT [t].[Id] FROM [PointOfInterest] t
+INNER JOIN @inserted0 i ON ([t].[Id] = [i].[Id])
+ORDER BY [i].[_Position];
+2016-12-19 17:12:05.9103|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 DEBUG http://localhost:56100/  0
+2016-12-19 17:12:05.9103|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:56100/  
+2016-12-19 17:12:05.9905|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 111.5088ms 200 
+2016-12-19 17:12:06.2365|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 378.7313ms 404 text/plain

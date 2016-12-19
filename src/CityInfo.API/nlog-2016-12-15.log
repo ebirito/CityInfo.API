@@ -1,0 +1,84 @@
+2016-12-15 22:10:37.1596|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 DEBUG http://localhost:56100/  0
+2016-12-15 22:10:37.1596|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:56100/  
+2016-12-15 22:10:37.4233|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 310.4274ms 200 
+2016-12-15 22:10:37.7522|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 662.1303ms 404 text/plain
+2016-12-15 22:10:38.2515|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:56100/favicon.ico  
+2016-12-15 22:10:38.2590|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 15.6426ms 404 text/plain
+2016-12-15 22:10:43.2264|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 DELETE http://localhost:56100/api/testdatabase  
+2016-12-15 22:10:43.2766|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 55.3653ms 404 text/plain
+2016-12-15 22:10:57.7640|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 DELETE http://localhost:56100/api/testdatabase  
+2016-12-15 22:10:57.7760|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 10.9871ms 404 text/plain
+2016-12-15 22:11:57.1705|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 DELETE http://localhost:56100/api/testdatabase  
+2016-12-15 22:11:57.1825|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 12.4813ms 404 text/plain
+2016-12-15 22:12:05.5686|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:56100/api/testdatabase  
+2016-12-15 22:12:17.5921|INFO|Microsoft.EntityFrameworkCore.Storage.IRelationalCommandBuilderFactory|Executed DbCommand (312ms) [Parameters=[], CommandType='Text', CommandTimeout='60']
+CREATE DATABASE [CityInfoDB];
+2016-12-15 22:12:17.6543|INFO|Microsoft.EntityFrameworkCore.Storage.IRelationalCommandBuilderFactory|Executed DbCommand (52ms) [Parameters=[], CommandType='Text', CommandTimeout='60']
+IF SERVERPROPERTY('EngineEdition') <> 5 EXEC(N'ALTER DATABASE [CityInfoDB] SET READ_COMMITTED_SNAPSHOT ON;');
+2016-12-15 22:12:17.8057|INFO|Microsoft.EntityFrameworkCore.Storage.IRelationalCommandBuilderFactory|Executed DbCommand (15ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE [Cities] (
+    [Id] int NOT NULL IDENTITY,
+    [Description] nvarchar(200),
+    [Name] nvarchar(50) NOT NULL,
+    CONSTRAINT [PK_Cities] PRIMARY KEY ([Id])
+);
+2016-12-15 22:12:17.8057|INFO|Microsoft.EntityFrameworkCore.Storage.IRelationalCommandBuilderFactory|Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE [PointOfInterest] (
+    [Id] int NOT NULL IDENTITY,
+    [CityId] int NOT NULL,
+    [Name] nvarchar(50) NOT NULL,
+    CONSTRAINT [PK_PointOfInterest] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_PointOfInterest_Cities_CityId] FOREIGN KEY ([CityId]) REFERENCES [Cities] ([Id]) ON DELETE CASCADE
+);
+2016-12-15 22:12:17.8328|INFO|Microsoft.EntityFrameworkCore.Storage.IRelationalCommandBuilderFactory|Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE INDEX [IX_PointOfInterest_CityId] ON [PointOfInterest] ([CityId]);
+2016-12-15 22:12:17.8879|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executing action method CityInfo.API.Controllers.DummyController.TestDatabase (CityInfo.API) with arguments ((null)) - ModelState is Valid
+2016-12-15 22:12:17.9100|INFO|Microsoft.AspNetCore.Mvc.StatusCodeResult|Executing HttpStatusCodeResult, setting HTTP status code 200
+2016-12-15 22:12:17.9320|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action CityInfo.API.Controllers.DummyController.TestDatabase (CityInfo.API) in 12314.1171ms
+2016-12-15 22:12:17.9501|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 12382.3562ms 200 
+2016-12-15 22:23:59.9217|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:56100/  
+2016-12-15 22:23:59.9217|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 DEBUG http://localhost:56100/  0
+2016-12-15 22:24:00.0803|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 198.8443ms 200 
+2016-12-15 22:24:00.3686|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 508.3908ms 404 text/plain
+2016-12-15 22:24:04.5027|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:56100/api/testdatabase  
+2016-12-15 22:24:16.0969|INFO|Microsoft.EntityFrameworkCore.Storage.IRelationalCommandBuilderFactory|Executed DbCommand (437ms) [Parameters=[], CommandType='Text', CommandTimeout='60']
+CREATE DATABASE [CityInfoDB];
+2016-12-15 22:24:16.1641|INFO|Microsoft.EntityFrameworkCore.Storage.IRelationalCommandBuilderFactory|Executed DbCommand (49ms) [Parameters=[], CommandType='Text', CommandTimeout='60']
+IF SERVERPROPERTY('EngineEdition') <> 5 EXEC(N'ALTER DATABASE [CityInfoDB] SET READ_COMMITTED_SNAPSHOT ON;');
+2016-12-15 22:24:16.3412|INFO|Microsoft.EntityFrameworkCore.Storage.IRelationalCommandBuilderFactory|Executed DbCommand (15ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE [__EFMigrationsHistory] (
+    [MigrationId] nvarchar(150) NOT NULL,
+    [ProductVersion] nvarchar(32) NOT NULL,
+    CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+);
+2016-12-15 22:24:16.4000|INFO|Microsoft.EntityFrameworkCore.Storage.IRelationalCommandBuilderFactory|Executed DbCommand (38ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT OBJECT_ID(N'__EFMigrationsHistory');
+2016-12-15 22:24:16.4261|INFO|Microsoft.EntityFrameworkCore.Storage.IRelationalCommandBuilderFactory|Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2016-12-15 22:24:16.4582|INFO|Microsoft.EntityFrameworkCore.Migrations.Internal.Migrator|Applying migration '20161216031959_CityInfoDbInitialMigration'.
+2016-12-15 22:24:16.5274|INFO|Microsoft.EntityFrameworkCore.Storage.IRelationalCommandBuilderFactory|Executed DbCommand (8ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE [Cities] (
+    [Id] int NOT NULL IDENTITY,
+    [Description] nvarchar(200),
+    [Name] nvarchar(50) NOT NULL,
+    CONSTRAINT [PK_Cities] PRIMARY KEY ([Id])
+);
+2016-12-15 22:24:16.5464|INFO|Microsoft.EntityFrameworkCore.Storage.IRelationalCommandBuilderFactory|Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE [PointOfInterest] (
+    [Id] int NOT NULL IDENTITY,
+    [CityId] int NOT NULL,
+    [Name] nvarchar(50) NOT NULL,
+    CONSTRAINT [PK_PointOfInterest] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_PointOfInterest_Cities_CityId] FOREIGN KEY ([CityId]) REFERENCES [Cities] ([Id]) ON DELETE CASCADE
+);
+2016-12-15 22:24:16.5645|INFO|Microsoft.EntityFrameworkCore.Storage.IRelationalCommandBuilderFactory|Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE INDEX [IX_PointOfInterest_CityId] ON [PointOfInterest] ([CityId]);
+2016-12-15 22:24:16.5855|INFO|Microsoft.EntityFrameworkCore.Storage.IRelationalCommandBuilderFactory|Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+VALUES (N'20161216031959_CityInfoDbInitialMigration', N'1.1.0-rtm-22752');
+2016-12-15 22:24:16.6457|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executing action method CityInfo.API.Controllers.DummyController.TestDatabase (CityInfo.API) with arguments ((null)) - ModelState is Valid
+2016-12-15 22:24:16.6738|INFO|Microsoft.AspNetCore.Mvc.StatusCodeResult|Executing HttpStatusCodeResult, setting HTTP status code 200
+2016-12-15 22:24:16.7008|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action CityInfo.API.Controllers.DummyController.TestDatabase (CityInfo.API) in 12103.1888ms
+2016-12-15 22:24:16.7238|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 12220.5674ms 200 
